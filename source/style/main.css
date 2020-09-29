@@ -370,6 +370,14 @@ textarea {
   flex-grow: 1;
 }
 
+.stack {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .main-nav {
   display: flex;
   justify-content: flex-start;
@@ -606,5 +614,95 @@ textarea {
 .header-top__user-more {
   width: 24px;
   background: url(../img/header/user_more.png) no-repeat center;
+  border: none;
+}
+
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/*****************************************
+
+$primary_color: #fff;
+
+$second_color: #777777;
+
+$third_color: #bfbfbf;
+
+*/
+.header-bootom {
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px solid;
+  /*dlt*/
+}
+
+.header-bootom__list {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.header-bootom__daily {
+  margin-bottom: 9px;
+  font-size: 12px;
+  color: #bfbfbf;
+}
+
+.header-bootom__daily-number {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f77359;
+}
+
+.header-bootom__index {
+  position: relative;
+  font-size: 12px;
+  color: #bfbfbf;
+  padding-left: 8px;
+}
+.header-bootom__index--up:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 6px solid #a889e9;
+}
+.header-bootom__index--down:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 6px solid #fd5670;
+}
+
+.header-bootom__daily-btn {
+  padding: 0px 60px;
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f77359;
+  font-size: 12px;
+  font-weight: 700;
   border: none;
 }
