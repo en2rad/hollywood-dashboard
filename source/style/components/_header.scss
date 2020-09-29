@@ -1,0 +1,61 @@
+.header {
+    color: #c8c8c8;
+}
+
+.header-top {
+    @include flex(row);
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+.header-top__btn {
+    width: 70px;
+    height: 70px;
+    border: none;
+}
+
+.header-top__btn:not(:last-child) {
+    border-right: 1px solid #f1f1f1;
+}
+
+.header-top__btn--more {
+    background: url(../img/header/more.png) no-repeat center;
+}
+
+.header-top__btn--folder {
+    background: url(../img/header/folder.png) no-repeat center;
+}
+
+.header-top__btn--settings {
+    background: url(../img/header/settings.png) no-repeat center;
+}
+
+.header-top__btn--upload {
+    background: url(../img/header/upload.png) no-repeat center;
+}
+
+.header-top__btn--envelope {
+    background: url(../img/header/envelope.png) no-repeat center;
+}
+
+.header-top__btn--planet-earth {
+    background: url(../img/header/planet-earth.png) no-repeat center;
+}
+
+.header-top__search {
+    @include flex(row,center,center);
+    flex-grow: 1;
+}
+
+.header-top__input-search {
+    height: 33px;
+    background: url(../img/header/search.png) no-repeat center #f8f8f8;
+    border: 1px solid #f1f1f1;
+    border-radius: 16px;
+}
+
+/*****/
+
+.header-top__user {
+
+}
