@@ -379,15 +379,28 @@ textarea {
   width: 69px;
   min-height: 100vh;
   background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+  box-shadow: 0px -2px 13px 2px rgba(0, 0, 0, 0.3);
 }
 
 .main-nav__logo {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 69px;
   height: 70px;
-  font-family: inherit;
+  font-family: "Bangers", cursive;
   font-size: 30px;
-  background: #fff;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.main-nav__logo P {
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f77359;
 }
 
 .main-nav__list {
@@ -503,6 +516,10 @@ textarea {
   border-right: 1px solid #f1f1f1;
 }
 
+.header-top__search + .header-top__btn {
+  border-left: 1px solid #f1f1f1;
+}
+
 .header-top__btn--more {
   background: url(../img/header/more.png) no-repeat center;
 }
@@ -534,13 +551,54 @@ textarea {
   flex-direction: row;
   flex-wrap: wrap;
   flex-grow: 1;
+  padding: 0 10px;
 }
 
 .header-top__input-search {
-  height: 33px;
-  background: url(../img/header/search.png) no-repeat center #f8f8f8;
+  min-width: 299px;
+  padding: 9px 12px;
+  font-size: 12px;
+  line-height: 0.5;
+  color: #c8c8c8;
+  background: url(../img/header/search.png) no-repeat 95% center #f8f8f8;
   border: 1px solid #f1f1f1;
   border-radius: 16px;
 }
 
+.header-top__input-search::placeholder {
+  color: #c8c8c8;
+}
+
 /*****/
+.header-top__user {
+  display: flex;
+  justify-content: start;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.header-top__text {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 150px;
+  padding-left: 18px;
+}
+
+.header-top__name {
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f77359;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.header-top__user-more {
+  width: 24px;
+  background: url(../img/header/user_more.png) no-repeat center;
+  border: none;
+}

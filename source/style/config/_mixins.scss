@@ -6,3 +6,10 @@
     flex-wrap: $wrap;
 }
 
+@mixin gradient_text {
+    background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #f77359;
+}
+
