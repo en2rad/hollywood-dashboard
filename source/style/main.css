@@ -589,12 +589,18 @@ textarea {
 }
 
 .header-top__name {
+  margin-bottom: 5px;
   background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #f77359;
   font-size: 13px;
   font-weight: 700;
+}
+
+.header-top__specialty {
+  font-size: 13px;
+  color: #bfbfbf;
 }
 
 .header-top__user-more {

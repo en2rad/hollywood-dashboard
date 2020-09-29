@@ -79,11 +79,14 @@
     padding-left: 18px;
 }
 .header-top__name {
+    margin-bottom: 5px;
     @include gradient_text;
     font-size: 13px;
     font-weight: 700;
 }
 .header-top__specialty {
+    font-size: 13px;
+    color: $third_color;
 }
 .header-top__user-more {
     width: 24px;
