@@ -1,5 +1,5 @@
 # Hollywood dashboard
 
-[links]()
+[links](https://en2rad.github.io/hollywood-dashboard/)
 
 ### Description
