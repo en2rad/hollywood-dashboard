@@ -20,6 +20,7 @@
 
 .sidebar {
     @include flex(column);
+    width: 270px;
 }
 
 .aside {

@@ -1,0 +1,52 @@
+.footer {
+    @include flex;
+    
+    &__title {
+        color: $second_color;
+        font-weight: 700;
+        padding-top: 29px;
+        padding-bottom: 25px;
+    }
+
+    &__list-social {
+        @include flex(row, center, center);
+        padding-bottom: 21px;
+    }
+
+    &__item {
+        width: 55px;
+        height: 55px;
+        margin: 6.5px;
+        border-radius: 15px;
+    }
+
+    &__item--rdio {
+        background: url(../img/footer/rdio.png) no-repeat center;
+    }
+
+    &__item--css3 {
+        background: url(../img/footer/css3.png) no-repeat center;
+    }
+
+    &__item--deviantart {
+        background: url(../img/footer/deviantart.png) no-repeat center;
+    }
+
+    &__item--xing {
+        background: url(../img/footer/xing.png) no-repeat center;
+    }
+
+    &__item--vimeo {
+        background: url(../img/footer/vimeo.png) no-repeat center;
+    }
+
+    &__item--vk {
+        background: url(../img/footer/vk.png) no-repeat center;
+    }
+
+    &__link {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
