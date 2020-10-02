@@ -46,34 +46,30 @@
             <button class="main-nav__power-btn">
                 <img src="./source/img/nav/power_button.png" alt="power button">
             </button>
+            <div class="main-nav__burger">
+              burger
+            </div>
         </nav>
 
         <div class="page">
             <header class="header">
               <div class="header-top">
-                <button class="header-top__btn header-top__btn--more">
-                
-                </button>
-                <button class="header-top__btn header-top__btn--folder">
-                 
-                </button>
-                <button class="header-top__btn header-top__btn--settings">
-                 
-                </button>
-
+                <div class="header__btn-wrap">
+                  <button class="header-top__btn header-top__btn--more"></button>
+                  <button class="header-top__btn header-top__btn--folder"></button>
+                  <button class="header-top__btn header-top__btn--settings"></button>
+                </div>
+            
                 <div class="header-top__search">
                   <input class="header-top__input-search" type="text" placeholder="Search Anything Here....">
                 </div>
 
-                <button class="header-top__btn header-top__btn--upload">
-                  
-                </button>
-                <button class="header-top__btn header-top__btn--envelope">
-                  
-                </button>
-                <button class="header-top__btn header-top__btn--planet-earth">
-                  
-                </button>
+                <div class="header__btn-wrap">
+                  <button class="header-top__btn header-top__btn--upload"></button>
+                  <button class="header-top__btn header-top__btn--envelope"></button>
+                  <button class="header-top__btn header-top__btn--planet-earth"></button>
+                </div>
+                
                 <div class="header-top__user">
                   <img class="header-top__userpic" src="./source/img/header/avatar.png" alt="">
                   <div class="header-top__text">
@@ -105,10 +101,10 @@
 
                   <li class="header-bootom__item">
                     <p class="header-bootom__daily">
-                      Daily Visitors
+                      Daily Customers
                     </p>
                     <p class="header-bootom__daily-number">
-                      150,0000
+                      120,0000
                     </p>
                     <span class="header-bootom__index header-bootom__index--up">
                       1020
@@ -120,10 +116,10 @@
 
                   <li class="header-bootom__item">
                     <p class="header-bootom__daily">
-                      Daily Visitors
+                      Daily Orders
                     </p>
                     <p class="header-bootom__daily-number">
-                      150,0000
+                      900,000
                     </p>
                     <span class="header-bootom__index header-bootom__index--up">
                       1020
@@ -135,10 +131,10 @@
 
                   <li class="header-bootom__item">
                     <p class="header-bootom__daily">
-                      Daily Visitors
+                      Daily Sales
                     </p>
                     <p class="header-bootom__daily-number">
-                      150,0000
+                      850,000
                     </p>
                     <span class="header-bootom__index header-bootom__index--up">
                       1020
@@ -150,10 +146,10 @@
 
                   <li class="header-bootom__item">
                     <p class="header-bootom__daily">
-                      Daily Visitors
+                      Daily Shipments
                     </p>
                     <p class="header-bootom__daily-number">
-                      150,0000
+                      750,000
                     </p>
                     <span class="header-bootom__index header-bootom__index--up">
                       1020
@@ -165,10 +161,10 @@
 
                   <li class="header-bootom__item">
                     <p class="header-bootom__daily">
-                      Daily Visitors
+                      Daily Revenue
                     </p>
                     <p class="header-bootom__daily-number">
-                      150,0000
+                      $985,0000
                     </p>
                     <span class="header-bootom__index header-bootom__index--up">
                       1020
@@ -180,10 +176,10 @@
 
                   <li class="header-bootom__item">
                     <p class="header-bootom__daily">
-                      Daily Visitors
+                      Daily Reviews
                     </p>
                     <p class="header-bootom__daily-number">
-                      150,0000
+                      600,000
                     </p>
                     <span class="header-bootom__index header-bootom__index--up">
                       1020
@@ -200,7 +196,112 @@
             </header>
             <div class="stack">
                 <main class="main">
+                  <div class="main__top">
+                    <div class="monthly-progress">
+                      <p class="monthly-progress__title">Monthly Revenue Progress</p>
 
+                      <div class="monthly-progress__btn-wrap">
+                        <button class="monthly-progress__btn monthly-progress__btn--active">
+                          Month
+                        </button>
+                        <button class="monthly-progress__btn">
+                          Day
+                        </button>
+                        <button class="monthly-progress__btn">
+                          Year
+                        </button>
+                        <button class="monthly-progress__btn-more">
+                      
+                        </button>
+                      </div>
+                    </div>
+                    <div class="revenue-per-hour">
+                      <p class="revenue-per-hour__title">Revenue Per Hour</p>
+                    </div>
+                  </div>
+
+                  <div class="main__bottom">
+                    <div class="customers-feed">
+                      <p class="customers-feed__title">
+                        Customers Feed
+                      </p>
+                      <ul class="customers-feed__list">
+                        <li class="customers-feed__item">
+                          <img src="" alt="">
+                        </li>
+                        <li class="customers-feed__item">
+                          
+                        </li>
+                      </ul>
+                      
+                    </div>
+                    <div class="main__bottom-right">
+                      <div class="today-task">
+                        <p class="today-task__title">Today Task</p>
+                        <ul class="today-task__list">
+                          <li class="today-task__item">
+                            <label class="tasks-list__label">
+                              <input type="checkbox" name="task_1" value="1" class="today-task__radio" checked>
+                              <span class="tasks-list__mark"></span>
+                              <span class="today-task__desc">arrange</span>
+                            </label>
+                            <span class="today-task__text">simply dummy text of the printing and......</span>
+                            <span class="today-task__clock">2:24 AM</span>
+                          </li>
+                          <li class="today-task__item">
+                            <label class="tasks-list__label">
+                              <input type="checkbox" name="task_1" value="1" class="today-task__radio" checked>
+                              <span class="tasks-list__mark"></span>
+                              <span class="today-task__desc">arrange</span>
+                            </label>
+                            <span class="today-task__text">simply dummy text of the printing and......</span>
+                            <span class="today-task__clock">2:24 AM</span>
+                          </li>
+                          <li class="today-task__item">
+                            <label class="tasks-list__label">
+                              <input type="checkbox" name="task_1" value="1" class="today-task__radio" checked>
+                              <span class="tasks-list__mark"></span>
+                              <span class="today-task__desc">arrange</span>
+                            </label>
+                            <span class="today-task__text">simply dummy text of the printing and......</span>
+                            <span class="today-task__clock">2:24 AM</span>
+                          </li>
+                          <li class="today-task__item">
+                            <label class="tasks-list__label">
+                              <input type="checkbox" name="task_1" value="1" class="today-task__radio" checked>
+                              <span class="tasks-list__mark"></span>
+                              <span class="today-task__desc">arrange</span>
+                            </label>
+                            <span class="today-task__text">simply dummy text of the printing and......</span>
+                            <span class="today-task__clock">2:24 AM</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+<!--}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} PROGRESS  STRAT {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{ -->
+                    <div class="progress">
+                      <p class="progress__title">Progress</p>
+                      <div class="progress_grafic">
+                        <div class="progress__col">
+                          <span class="progress_percent"></span>
+                        </div>
+                        <div class="progress__col">
+                          <span class="progress_percent"></span>
+                        </div>
+                        <div class="progress__col">
+                          <span class="progress_percent"></span>
+                        </div>
+                        <div class="progress__col">
+                          <span class="progress_percent"></span>
+                        </div>
+                        <div class="progress__col">
+                          <span class="progress_percent"></span>
+                        </div>
+                      </div>
+                    </div>
+<!--}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} PROGRESS  END {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{ -->
+                  </div>
                 </main>
                 <div class="sidebar">
                     <aside class="aside">

@@ -2,10 +2,12 @@
     @include flex;
     
     &__title {
-        color: $second_color;
-        font-weight: 700;
+        width: 100%;
         padding-top: 29px;
         padding-bottom: 25px;
+        text-align: center;
+        font-weight: 700;
+        color: $second_color;
     }
 
     &__list-social {

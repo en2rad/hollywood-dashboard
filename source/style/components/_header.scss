@@ -7,6 +7,10 @@
     border-bottom: 1px solid #f1f1f1;
 }
 
+.header__btn-wrap {
+    border-left: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+}
 
 .header-top__btn {
     width: 70px;
@@ -49,11 +53,12 @@
 .header-top__search {
     @include flex(row,center,center);
     flex-grow: 1;
-    padding: 0 10px;
+    min-height: 70px;
 }
 
 .header-top__input-search {
     min-width: 299px;
+    margin: 0 10px;
     padding: 9px 12px;
     font-size: 12px;
     line-height: 0.5;
@@ -70,13 +75,15 @@
 
 .header-top__user {
     @include flex(row,start,center);
+    max-width: 245px;
+    flex-grow: 1;
 }
 .header-top__userpic {
 
 }
 .header-top__text {
     @include flex(column);
-    width: 150px;
+    flex-grow: 1;
     padding-left: 18px;
 }
 .header-top__name {
@@ -111,16 +118,20 @@ $third_color: #bfbfbf;
 
 */
 .header-bootom {
-    @include flex(row,flex-start);
+    @include flex(row,flex-start,stretch,nowrap);
     border-bottom: 1px solid; /*dlt*/
 }
 
 .header-bootom__list {
+    overflow-y: scroll;
+
     padding: 20px 0;
-    @include flex(row,space-around);
+    @include flex(row,space-around,stretch,nowrap);
     flex-grow: 1;
 }
 .header-bootom__item {
+    padding: 0 15px;
+    min-width: 120px;
 }
 .header-bootom__daily {
     margin-bottom: 9px;
@@ -165,4 +176,48 @@ $third_color: #bfbfbf;
     font-size: 12px;
     font-weight: 700;
     border: none;
+}
+
+
+@media (max-width: 1115px) {
+    .header-top__user {
+        order: -1;
+        
+        border-bottom: 1px solid #f1f1f1;
+    }
+    .header-top__search {
+        order: -2;
+        width: calc(100% - 245px);
+        min-width: 365px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    .header-top__input-search {
+        width: 75%;
+    }
+    .header-top__btn {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 565px) {
+    .header-top__user {
+        max-width: inherit;
+        width: 100%;
+    }
+    
+    .header-bootom {
+        flex-wrap: wrap;
+    }
+
+    .header-bootom__daily-btn {
+        height: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 436px) {
+    .header__btn-wrap:first-child {
+        border-bottom: 1px solid #f1f1f1;
+    }
 }
