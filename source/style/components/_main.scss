@@ -1,185 +1,502 @@
 .main {
     padding: 20px;
     flex: auto;
+    
+    flex-basis: 528px;
+
     min-width: 320px;
-    // max-width: 939px;
-    max-width: 1030px;
+    max-width: 1029px;
+
+    background: #f0f0f0;
+
 }
 
+
 .main__top {
-    @include flex;
-    height: 265px;
+    @include flex(row, space-between);
+ 
 }
+
+
+// Monthly Revenue Progress start  ----------------------------------------------------------------
 
 .monthly-progress {
     @include flex(row,space-between);
-    background: #ffffff;
-    width: 66.6%;
+    
+    flex: auto;
+  
+    
+    max-width: 703px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    flex-basis: 300px; /*?*/
+
+    @include lg {
+        flex-basis: 700px;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    @include bg_main_elements;
+
+    &__title {
+        @include title;
+    }
+
+    &____btn-wrap {
+
+    }
+
+    &__btn {
+        margin-right: 5px;
+        padding: 7px 16px;
+        color: $third_color;
+        font-size: 12px;
+
+        &:hover,
+        &--active {
+            padding: 7px 16px;
+            background: $bg_gradient; 
+            border-radius: 15px;
+            color: #fff;
+        }
+    }
+
+    &__btn-more {
+        height: 17px;
+        width: 4px;
+        padding: 5.5px 3px;
+        background: url(../img/header/user_more.png) no-repeat center;
+        border: none;
+    }
 }
+
+// Revenue Per Hour ----------------------------------------------------------------
 
 .revenue-per-hour {
-    background: #000;
-    width: 33.3%;
+    @include flex(column);
+    
+    flex: auto;
+
+    flex-basis: 245px;
+
+    max-width: 263px;
+    margin-bottom: 20px;
+
+    @include lg {
+        max-width: 100%;
+    }
+
+    @include bg_main_elements;
+
+    &__title {
+        flex-grow: 1;
+        @include title;
+        text-align: center;
+    }
+
+
+    // svg
+
+    &__diagram {
+        position: relative;
+    }
+
+    &__ring {
+        stroke-width: 4px;
+    }
+
+    &__segment {
+        fill: transparent; /* bg */
+        stroke: linear-gradient(0deg, #6d5bb6 0%, #747fde 100%) #7677d8;
+        stroke: url(#linear-gradient); /* color */
+        stroke-width: 4px;
+    }
+
+    &__money {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        @include second_gradient_text;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+
+    &__index {
+        margin: 0 auto;
+    }
+}  
+
+/* {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{ */
+
+.main__bottom {
+    @include flex(row, space-between);
+
+    flex: auto;
 }
 
 
-.monthly-progress__title {
-    color: $second_color;
-    font-weight: 700;
+// Customers Feed ----------------------------------------------------------------------
+
+.customers-feed {
+    @include bg_main_elements;
+    
+    flex: auto;
+    max-width: 466px;
+    margin-right: 20px;  
+
+    @include lg {
+        max-width: 100%;
+        flex-basis: 500px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    flex-basis: 50%;
+    &__title {
+        @include title;
+        margin-bottom: 40px;
+    }
+
+    &__wrap {
+        @include flex;
+    }
+
+    &__avatar-wrap {
+        width: 42px;
+        margin-right: 20px;
+    }
+
+    &__avatar {
+        height: 42px;
+    }
+
+    &__time-ago {
+        font-size: 8px;
+        color: #979796;
+    }
+
+    &__list {
+        @include flex(row,flex-end);
+
+        width: calc(100% - 62px);
+        font-size: 12px;
+        color: $third_color;
+    }
+
+    &__item {
+        padding: 20px;
+        margin-bottom: 20px;
+
+        background-color: #fcfcfc;
+        border: 1px solid #f1f1f1;
+
+        &:not(:first-child) {
+            width: calc(100% - 30px);
+        }
+
+        & span{
+            color: $second_color;
+            font-weight: 700;
+        }
+    }
+}
+
+// bottom-right ----------------------------------------------------------------------
+
+.main__bottom-right {
+    @include flex(row, space-between);
+    
+    flex: auto;
+    flex-basis: 300px;
+    max-width: 500px;
+
+    
+    @include lg {
+        max-width: 100%;
+        flex-basis: 500px;
+    }
 }
 
 
-.monthly-progress__btn-wrap {
+// Today Task ----------------------------------------------------------------------
 
+.today-task {
+    flex: auto;
+
+    @include bg_main_elements;
+
+    margin-bottom: 20px;
+
+    width: 100%;
+
+    &__title {
+        @include title;
+        padding-bottom: 25px;        
+    }
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__item {
+        @include flex(row,start,center);
+        padding: 12px 0;
+        border-bottom: 1px solid #ededed;
+
+        &:nth-child(2n) {
+            background: #fcfcfc;
+        }
+
+        &:first-child{
+            border-top: 1px solid #ededed;
+        }
+    }
+
+    &__label {
+        
+    }
+
+    &__radio {
+        display: none;
+        margin-right: 12px;
+
+        &:checked ~ .today-task__mark {
+            border-image: linear-gradient(0deg, #fd5272 0%, #f77359 100%);
+            background: $bg_gradient;
+        }
+          
+        &:checked ~ .today-task__mark:before {
+            display: block;
+        }
+    }
+
+    &__mark {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 12px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #c4cbd2;
+        border-radius: 12px;
+
+        &:before {
+            content: '';
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -5px 0 0 -6px;
+            height: 4px;
+            width: 8px;
+            border: solid #fff;
+            border-width: 0 0 4px 4px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+          
+    &__desc {
+        padding-right: 15px;
+        @include gradient_text;
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    &__text {
+        flex-grow: 1;
+        padding-right: 10px;
+        color: #bfbfbf;
+        font-size: 12px;
+    }
+
+    &__clock {
+        position: relative;
+        padding-right: 5px;
+        padding-left: 17px;
+
+        font-size: 12px;
+        color: #979797;
+    
+        background: url(../img/main/clock.png) no-repeat left center;
+        
+    }
 }
 
-.monthly-progress__btn {
-    color: $third_color;
-    font-size: 12px;
-}
+// Progress ----------------------------------------------------------------------
 
-.monthly-progress__btn:hover,
-.monthly-progress__btn--active {
-    // w67 h23
-    background: $bg_gradient;
-    padding: 10px;
-    border-radius: 15px;
-    color: #fff;
-}
 
-.monthly-progress__btn-month {
 
-}
+.progress {
+    flex: auto;
+    max-width: 245px;
+    margin-right: 20px;
 
-.monthly-progress__btn-day {
+
+    flex-basis: 230px;
+
+    @include bg_main_elements;
+
+
+    @include lg {
+        max-width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        
+        @include title;
+        
+        text-align: center;
+    }
+
+    // grafic
+   
+    &__grafic {
+        @include flex(row, space-between, stretch, nowrap);
+        margin-bottom: 24px;
+    }
+
+    &__col {
+        display: flex;
+        align-items: flex-end;
+    
+        width: 10%;   
+        border: 1px solid #f1f1f1;
+        background-color: #f6f6f6; 
+        margin: 0 5px; 
+        height: 88px;
+        border-radius: 5px;
+        align-items: flex-end;
+
+        &:nth-child(3n - 2) .progress__value {
+            height: 40%;
+        }
+    
+        &:nth-child(2n) .progress__value {
+            height: 55%;
+        }
+
+        &:nth-child(3n) .progress__value {
+            height: 75%;
+        }
+    }
+
+  
+
+    &__value {
+        display: block;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(0deg, #6d5bb6 0%, #747fde 100%) #7677d8;
+        border-radius: 5px;
+
+    }
+ 
+
+    &__footer {
+        text-align: center;
+    }
+
+    &__money {
+        @include second_gradient_text;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    &__index {
+
+    }
     
 }
 
-.monthly-progress__btn-year {
+// Shipments ----------------------------------------------------------------------
 
+.shipments{
+    @include flex(column,start,stretch,nowrap);
+
+    flex: auto;
+    max-width: 245px;
+
+
+    flex-basis: 230px;
+
+    @include lg {
+        max-width: 100%;
+    }
+
+    @include bg_main_elements;
+
+    &__title {
+        margin-bottom: 24px;
+        @include title;
+        text-align: center;
+    }
+
+    &__usa-map {
+        margin-bottom: 20px;
+
+        & svg {
+            width: 100%;
+            height: auto;
+        }
+          
+        & a:hover path{
+            fill:red;
+          }
+          
+        & .cls-1{
+          fill: #ebebeb;
+                stroke: #fff;
+                stroke-miterlimit: 10;
+        }
+    }
+
+    &__footer {
+        @include flex(row, flex-end);
+        align-items: flex-end;
+    }
+    
+    &__money {
+        margin-right: auto;
+
+        font-size: 20px;
+        font-weight: 700;
+        @include gradient_text;
+    }
+}
+
+
+@media (max-width: 1345px) {
+    .progress {
+        max-width: 100%;
+        flex-basis: 345px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .shipments {
+        max-width: 100%;
+        flex-basis: 345px;
+    }
 
 }
 
-.monthly-progress__btn-more {
-    width: 24px;
-    background: url(../img/header/user_more.png) no-repeat center;
-    border: none;
+@media (max-width: 1200px) and (min-width: 1089px) {
+    .progress {
+
+        margin-right: 20px;
+
+    }
+
 }
-
-
-
-
-/* Today Task start */
-.today-task {
-  max-width: 500px;
-  padding: 23px 30px;
-
-  background: #fff;
-  box-shadow: -1px 0px 15px -2px rgba(138,138,138,1);
-}
-
-.today-task__title {
-  font-weight: 700;
-  font-size: 16px;
-  padding-bottom: 25px;
-}
-
-.today-task__list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.today-task__item {
-  @include flex(row,start,center);
-  padding: 12px 0;
-  border-bottom: 1px solid #ededed;
-}
-
-.today-task__item:nth-child(2n) {
-  background: #fcfcfc;
-}
-
-.today-task__item:first-child{
-  border-top: 1px solid #ededed;
-}
- 
-.today-task__radio {
-  margin-right: 12px;
-}
-
-.today-task__desc {
-  @include gradient_text;
-  font-weight: 700;
-  padding-right: 15px;
-}
-
-.today-task__text {
-  color: #bfbfbf;
-  flex-grow: 1;
-}
-
-.today-task__clock {
-  position: relative;
-  color: #979797;
-  padding-right: 5px;
-  background: url(../img/main/clock.png) no-repeat left center;
-  padding-left: 17px;
-}
-
-// .today-task__clock:before {
-//   content: '';
-//   position: absolute;
-//   left: -17px;
-//   width: 12px;
-//   height: 12px;
-//   background: url(../img/main/clock.png) center;
-// }
-
-
-/***  ***/
-
-
-/*Убрать чек бох*/
-.today-task__radio {
-  display: none;
-}
-
-.tasks-list__mark {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 12px;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #c4cbd2;
-  border-radius: 12px;
-}
-
-.tasks-list__mark:before {
-  content: '';
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -5px 0 0 -6px;
-  height: 4px;
-  width: 8px;
-  border: solid #fff;
-  border-width: 0 0 4px 4px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.today-task__radio:checked ~ .tasks-list__mark {
-  border-image: linear-gradient(0deg, #fd5272 0%, #f77359 100%);
-  background: $bg_gradient;
-}
-
-.today-task__radio:checked ~ .tasks-list__mark:before {
-  display: block;
-}
-
-/* Today Task end */

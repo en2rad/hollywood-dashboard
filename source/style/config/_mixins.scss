@@ -13,6 +13,27 @@
     color: #f77359;
 }
 
+@mixin second_gradient_text {
+    background: linear-gradient(0deg, #6d5bb6 0%, #747fde 100%) #7677d8;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #7677d8;
+}
+
+
+@mixin title {
+    color: $second_color;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+@mixin bg_main_elements {
+    background: #ffffff;
+    box-shadow: -1px 0px 15px -2px rgba(138,138,138,1);
+    padding: 30px;
+}
+
+
 // Small devices
 @mixin sm {
     @media (max-width: #{$screen-sm-max}) {

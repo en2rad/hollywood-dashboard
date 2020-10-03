@@ -1,9 +1,22 @@
 .sidebar {
-    @include flex(column);
-    width: 270px;
+    @include flex(column,start);
+    
+    flex: auto;
+
+
+    flex-basis: 240px;
+    max-width: 269px;
+
+    @include sm {
+        max-width: 100%;
+        
+
+    }
 }
 
-.aside {
+
+
+.aside {    
 
 }
 
@@ -119,11 +132,7 @@
 
 
 @media (max-width: 915px) {
-    .aside {
-        width: 100%;
-    }
     .sidebar {
-        @include flex(column);
-        width: 100%;
+        @include flex(column,start,stretch,wrap);
     }
 }

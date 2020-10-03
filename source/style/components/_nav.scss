@@ -1,108 +1,197 @@
-.main-nav {
-    // position: fixed;
-    // left: 0;
-
-    @include flex(column, flex-start);
+.nav {
+    
+    position: fixed;
+    top: 0;
+   
+    z-index: 999;
+    @include flex(column,start);
 
     width: 70px;
     min-height: 100vh;
+
     background: $bg_gradient;
     box-shadow: 0px -2px 13px 2px rgba(0,0,0,0.3);
 
     @include md {
-        flex-direction: row;
-        width: 100%;
-        height: 70px;
-        min-height: auto;
-    }
-
-    &__logo {
-        @include flex(row,center,center);
-        
-        width: 70px; 
         min-height: 70px;
-        font-family: 'Bangers', cursive;
-        font-size: 30px;
-        text-decoration: none;
-        background-color: $primary_color;
+        height: 70px;
+        width: 100%;
+        align-content: flex-start;
     }
 
-    &__logo p {
-        @include gradient_text;
-    }
-
-    &__list {
-        @include flex(column, flex-start);
-        flex-grow: 1;
-
-        @include md {
-            display: none;
-        }
-    }
-
-    &__item {
-       
-    }
-
+    
     &__link {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-content: center;
+
+        @include flex(row,center,flex-end);
+        
+        width: 70px;
+        min-height: 70px;
+
+        padding-bottom: 10px;
+        font-size: 11px;
+
+        color: #fff;
         text-decoration: none;
 
-        width: 70px;
-        min-height: 70px;
-    }
+        &--logo {
+            align-items: center;
+            font-size: 40px;
+            
+            background-color: #fff;
 
+            & span{
+                @include gradient_text;
+            }
+        }
 
-    &__link--home {
-        background: url(../img/nav/icon_home.png) no-repeat center;
-    }
-    &__link--stactics {
-        background: url(../img/nav/icon_statics.png) no-repeat center;
-    }
-    &__link--users {
-        background: url(../img/nav/icon_users.png) no-repeat center;
-    }
-    &__link--settings {
-        background: url(../img/nav/icon_settings.png) no-repeat center;
-    }
-    &__link--quires {
-        background: url(../img/nav/icon_quires.png) no-repeat center;
-    }
+        &--home {
+            background: url(../img/nav/icon_home.png) no-repeat center 20px;
+        }
 
-    &__link:hover:before {
-        content: "";
-        position: absolute;
-        top: 27.5px;
-        right: -6px;
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 7.5px solid transparent;
-        border-bottom: 7.5px solid transparent;
-        border-left: 6px solid #f86e5c;
-    }
+        &--statistics {
+            background: url(../img/nav/icon_statics.png) no-repeat center 20px;
+        }
 
-    &__link-text {
-        display: block;
-        max-width: 100%;
-        padding-bottom: 7px;
-        font-size: 10px;
-        color: $primary_color;
-        text-align: center;
-    }
+        &--users {
+            background: url(../img/nav/icon_users.png) no-repeat center 20px;
+        }
 
-    &__power-btn {
-        width: 70px;
-        min-height: 70px;
-        padding-top: 19px;
-        padding-bottom: 19px;
-        background: none;
-        border: none;
-    }
+        &--settings {
+            background: url(../img/nav/icon_settings.png) no-repeat center 20px;
+        }
 
+        &--quires {
+            background: url(../img/nav/icon_quires.png) no-repeat center 20px;
+        }
+
+        &--power {
+            margin-top: auto;
+            background: url(../img/nav/power_button.png) no-repeat center 20px;
+        }
+
+        &:not(:first-child):hover:before {
+            content: "";
+            position: absolute;
+            top: 27.5px;
+            right: -6px;
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 7.5px solid transparent;
+            border-bottom: 7.5px solid transparent;
+            border-left: 6px solid #f86e5c;
+        }
+    }
 }
+
+
+
+// .main-nav {
+//     // position: fixed;
+//     // left: 0;
+
+//     @include flex(column, flex-start);
+
+//     width: 70px;
+//     min-height: 100vh;
+//     background: $bg_gradient;
+//     box-shadow: 0px -2px 13px 2px rgba(0,0,0,0.3);
+
+//     @include md {
+//         flex-direction: row;
+//         width: 100%;
+//         height: 70px;
+//         min-height: auto;
+//     }
+
+//     &__logo {
+//         @include flex(row,center,center);
+        
+//         width: 70px; 
+//         min-height: 70px;
+//         font-family: 'Bangers', cursive;
+//         font-size: 30px;
+//         text-decoration: none;
+//         background-color: $primary_color;
+//     }
+
+//     &__logo p {
+//         @include gradient_text;
+//     }
+
+//     &__list {
+//         @include flex(column, flex-start);
+//         flex-grow: 1;
+
+//         @include md {
+//             display: none;
+//         }
+//     }
+
+//     &__item {
+       
+//     }
+
+//     &__link {
+//         position: relative;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-end;
+//         align-content: center;
+//         text-decoration: none;
+
+//         width: 70px;
+//         min-height: 70px;
+//     }
+
+
+//     &__link--home {
+//         background: url(../img/nav/icon_home.png) no-repeat center;
+//     }
+//     &__link--stactics {
+//         background: url(../img/nav/icon_statics.png) no-repeat center;
+//     }
+//     &__link--users {
+//         background: url(../img/nav/icon_users.png) no-repeat center;
+//     }
+//     &__link--settings {
+//         background: url(../img/nav/icon_settings.png) no-repeat center;
+//     }
+//     &__link--quires {
+//         background: url(../img/nav/icon_quires.png) no-repeat center;
+//     }
+
+//     &__link:hover:before {
+//         content: "";
+//         position: absolute;
+//         top: 27.5px;
+//         right: -6px;
+//         display: block;
+//         width: 0;
+//         height: 0;
+//         border-top: 7.5px solid transparent;
+//         border-bottom: 7.5px solid transparent;
+//         border-left: 6px solid #f86e5c;
+//     }
+
+//     &__link-text {
+//         display: block;
+//         max-width: 100%;
+//         padding-bottom: 7px;
+//         font-size: 10px;
+//         color: $primary_color;
+//         text-align: center;
+//     }
+
+//     &__power-btn {
+//         width: 70px;
+//         min-height: 70px;
+//         padding-top: 19px;
+//         padding-bottom: 19px;
+//         background: none;
+//         border: none;
+//     }
+
+// }
 

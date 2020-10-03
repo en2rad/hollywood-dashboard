@@ -1,24 +1,33 @@
 .wrapper {
-    @include flex;
+    position: relative;
+    // @include flex;
     max-width: 1366px;
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
+    line-height: normal;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .page {
-    width: calc(100% - 70px);
-    flex-grow: 1;
-    // margin-left: 70px;
+    // width: 100%;
+    margin-left: 70px;
+    
+    @include md {
+        margin-left: 0;
+        margin-top: 70px;
+    }
 }
 
 .stack {
-    @include flex;
+    @include flex(row,start,stretch);
 }
 
-.main {
-    flex-grow: 1;
-    background: #f0f0f0;
-}
+
 
 .aside {
 
@@ -26,4 +35,38 @@
 
 .footer {
 
+}
+
+.index {
+    &__item {
+        position: relative;
+        
+        padding-left: 8px;
+        font-size: 12px;
+        color: #bfbfbf;
+    }
+
+    &__item--up {
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-bottom: 6px solid #a889e9;
+        }
+
+    }
+    &__item--down {
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 6px solid #fd5670;
+        }
+    }
 }
