@@ -619,6 +619,24 @@ img {
   flex-wrap: nowrap;
   flex-grow: 1;
 }
+.header-bootom__list::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.header-bootom__list::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.header-bootom__list::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+.header-bootom__list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+.header-bootom__list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+}
 .header-bootom__item {
   padding: 0 15px;
   min-width: 120px;
@@ -992,6 +1010,11 @@ img {
 }
 
 .progress {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-direction: column;
+  flex-wrap: wrap;
   flex: auto;
   max-width: 245px;
   margin-right: 20px;
@@ -1060,10 +1083,10 @@ img {
 }
 .shipments {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-content: stretch;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex: auto;
   max-width: 245px;
   flex-basis: 230px;
@@ -1084,6 +1107,7 @@ img {
   text-align: center;
 }
 .shipments__usa-map {
+  display: flex;
   margin-bottom: 20px;
 }
 .shipments__usa-map svg {
@@ -1166,6 +1190,24 @@ img {
   overflow-x: scroll;
   height: 497px;
   padding: 0 18px;
+}
+.aside__list::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.aside__list::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.aside__list::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+.aside__list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+.aside__list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
 }
 
 .aside__btn-wrap {

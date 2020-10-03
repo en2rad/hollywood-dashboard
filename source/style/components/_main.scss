@@ -333,11 +333,12 @@
     }
 }
 
-// Progress ----------------------------------------------------------------------
+// Progress 5 ----------------------------------------------------------------------
 
 
 
 .progress {
+    @include flex(column, space-between);
     flex: auto;
     max-width: 245px;
     margin-right: 20px;
@@ -423,7 +424,7 @@
 // Shipments ----------------------------------------------------------------------
 
 .shipments{
-    @include flex(column,start,stretch,nowrap);
+    @include flex(column, space-between);
 
     flex: auto;
     max-width: 245px;
@@ -444,6 +445,7 @@
     }
 
     &__usa-map {
+        display: flex;
         margin-bottom: 20px;
 
         & svg {

@@ -36,6 +36,8 @@
     overflow-x: scroll;
     height: 497px;
     padding: 0 18px;
+
+    @include scroll;
 }
 
 .aside__btn-wrap {
