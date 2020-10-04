@@ -39,7 +39,7 @@
     @media (max-width: #{$screen-sm-max}) {
         @content;
     }
- }
+}
  
  // Medium devices
  @mixin md {
@@ -53,15 +53,20 @@
     @media (max-width: #{$screen-lg-max}) {
         @content;
     }
- }
+}
  
  // Extra large devices
- @mixin xl {
-    @media (max-width: #{$screen-xl-max}) {
+ @mixin xs {
+    @media (max-width: #{$screen-xs-max}) {
         @content;
     }
- }
+}
 
+@mixin header_break_point {
+    @media (max-width: 1010px) {
+        @content;
+    }
+}
 
 
 @mixin scroll($scroll-x: 5px, $scroll-y: 5px) {
