@@ -13,7 +13,7 @@ img {
     height: auto;
 }
 
-.page {
+.container {
     // width: 100%;
     margin-left: 70px;
     
@@ -23,7 +23,7 @@ img {
     }
 }
 
-.stack {
+.container--inner {
     @include flex(row,start,stretch);
 }
 
