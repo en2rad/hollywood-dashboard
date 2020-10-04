@@ -127,8 +127,3 @@
     }
 }
 
-@media (max-width: 915px) {
-    .sidebar {
-        @include flex(column,start,stretch,wrap);
-    }
-}

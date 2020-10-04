@@ -16,6 +16,7 @@
         min-height: 70px;
         height: 70px;
         width: 100%;
+        flex-direction: row;
         align-content: flex-start;
     }
 
@@ -33,6 +34,9 @@
 
         color: #fff;
         text-decoration: none;
+
+   
+
 
         &--logo {
             align-items: center;
@@ -66,8 +70,18 @@
         }
 
         &--power {
+            margin-left: auto;
             margin-top: auto;
-            background: url(../img/nav/power_button.png) no-repeat center 20px;
+            background: url(../img/nav/power_button.png) no-repeat center;
+        }
+
+        &--burger {
+            display: none;
+            background: url(../img/nav/burger.png) no-repeat center;
+
+            @include sm {
+                display: block;
+            }
         }
 
         &:not(:first-child):hover:before {
@@ -86,3 +100,5 @@
 }
 
 
+
+  

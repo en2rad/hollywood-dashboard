@@ -6,8 +6,7 @@
         padding-top: 29px;
         padding-bottom: 25px;
         text-align: center;
-        font-weight: 700;
-        color: $second_color;
+        @include title;
     }
 
     &__list-social {
