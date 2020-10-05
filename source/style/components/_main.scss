@@ -1,5 +1,11 @@
 .main {
     padding: 20px 10px 0;
+
+    
+    @include xs {
+        padding: 20px 0px 0;
+    }
+
     flex: auto;
     
     flex-basis: 528px;
@@ -28,7 +34,11 @@
 // Monthly Revenue Progress start  ----------------------------------------------------------------
 
 .monthly-progress {
-    @include flex(row,space-between);
+    overflow: scroll;
+
+    @include scroll;
+
+    @include flex(column,space-between);
     flex: auto;
     flex-basis: 500px; /*?*/
 
@@ -38,11 +48,108 @@
 
     &__title {
         @include title;
+
+        display: flex;
+        flex: auto;
+        flex-grow: 99;
+        flex-basis: 300px;
+        align-items: center;
+        margin-bottom: 15px;
     }
 
-    &____btn-wrap {
 
+    &__btn-wrap {
+        display: flex;
+        flex: auto;
+        justify-content: space-between;
+        align-items: center;
     }
+
+    &__header {
+        @include flex(row, space-between);
+        margin-bottom: 25px;
+    }
+
+    // diagram start 
+
+    &__diagram {
+        overflow: scroll;
+        @include flex(column);
+        width: 100%;
+
+        @include scroll;
+    }
+    
+    &__inner {
+        position: relative;
+        @include flex(row, start, stretch, nowrap);
+    }
+    &__osiy {
+        @include flex(column, space-between);
+    
+        width: 27px;
+        margin-bottom: 15px;
+        
+        font-size: 12px;
+        font-weight: 700;
+        color: $third_color;
+    }
+    
+    &__osiy-item{
+    
+        &:before {
+          content: "";
+          position: absolute;
+          top: 13px;
+          right: 0;
+    
+          display: block;
+          width: calc(100% - 42px);
+          height: 1px;
+    
+          background: #efeeee;
+        }
+    
+        &:nth-child(2):before {
+            top: 58px;
+        }
+    
+        &:nth-child(3):before {
+            top: 103px;
+        }
+    
+        &:nth-child(4):before {
+            top: inherit;
+            bottom: 15px;
+        }
+    
+        &:not(:last-child) {
+            padding-bottom: 20px;
+        }
+    }
+    
+    
+    &__svg {
+        width: 100%;
+        background: url(../img/main/line_chart.png) center no-repeat; 
+        margin: 0 0 15px 15px;
+    }
+    &__osix {
+        @include flex(row, space-between, stretch, nowrap);
+        margin-left: 50px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $third_color;
+    }
+    
+    &__osix-item{
+    
+      &:not(:last-child) {
+        padding-right: 25px;
+      }
+    }
+
+    /* diagram end */
 
     &__btn {
         margin-right: 5px;
@@ -137,13 +244,6 @@
     flex: auto;
     flex-basis: 467px;
     margin: 0 10px 20px 10px;  
-
-    // @include lg {
-    //     max-width: 100%;
-    //     flex-basis: 500px;
-    //     margin-bottom: 20px;
-    // }
-
   
     &__title {
         @include title;
@@ -161,17 +261,22 @@
 
     &__avatar {
         height: 42px;
+        margin-bottom: 13px;
     }
 
     &__time-ago {
+        display: block;
+        margin-bottom: 10px;
+
         font-size: 8px;
-        color: #979796;
+        color: #979796; 
     }
 
     &__list {
         @include flex(row,flex-end);
-
-        width: calc(100% - 62px);
+        flex: auto;
+        flex-basis: 300px;
+    
         font-size: 12px;
         color: $third_color;
     }
@@ -297,8 +402,7 @@
 
     &__text {
         flex-grow: 1;
-        width: 10%;
-        padding-right: 10px;
+        padding: 10px;
         color: #bfbfbf;
         font-size: 12px;
     }
@@ -324,7 +428,6 @@
     @include flex(column, space-between);
     flex: auto;
     margin: 0 10px 20px 10px;  
-
 
     flex-basis: 230px;
 
@@ -454,4 +557,5 @@
         @include gradient_text;
     }
 }
+
 

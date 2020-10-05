@@ -596,6 +596,7 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   flex: auto;
+  flex-grow: 5;
   min-height: 70px;
   border-right: 1px solid #f1f1f1;
 }
@@ -757,6 +758,11 @@ img {
   max-width: 1029px;
   background: #f0f0f0;
 }
+@media (max-width: 576px) {
+  .main {
+    padding: 20px 0px 0;
+  }
+}
 
 .stack--horizontal {
   display: flex;
@@ -780,10 +786,11 @@ img {
 }
 
 .monthly-progress {
+  overflow: scroll;
   display: flex;
   justify-content: space-between;
   align-content: stretch;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   flex: auto;
   flex-basis: 500px;
@@ -792,11 +799,139 @@ img {
   background: #ffffff;
   box-shadow: -1px 0px 15px -2px #8a8a8a;
   padding: 30px;
+  /* diagram end */
+}
+.monthly-progress::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.monthly-progress::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.monthly-progress::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+.monthly-progress::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+.monthly-progress::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
 }
 .monthly-progress__title {
   color: #777777;
   font-weight: 800;
   font-size: 14px;
+  display: flex;
+  flex: auto;
+  flex-grow: 99;
+  flex-basis: 300px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.monthly-progress__btn-wrap {
+  display: flex;
+  flex: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.monthly-progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.monthly-progress__diagram {
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.monthly-progress__diagram::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.monthly-progress__diagram::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.monthly-progress__diagram::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+.monthly-progress__diagram::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+.monthly-progress__diagram::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(0deg, #fd5272 0%, #f77359 100%) #fd5272;
+}
+.monthly-progress__inner {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.monthly-progress__osiy {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 27px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #bfbfbf;
+}
+.monthly-progress__osiy-item:before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  right: 0;
+  display: block;
+  width: calc(100% - 42px);
+  height: 1px;
+  background: #efeeee;
+}
+.monthly-progress__osiy-item:nth-child(2):before {
+  top: 58px;
+}
+.monthly-progress__osiy-item:nth-child(3):before {
+  top: 103px;
+}
+.monthly-progress__osiy-item:nth-child(4):before {
+  top: inherit;
+  bottom: 15px;
+}
+.monthly-progress__osiy-item:not(:last-child) {
+  padding-bottom: 20px;
+}
+.monthly-progress__svg {
+  width: 100%;
+  background: url(../img/main/line_chart.png) center no-repeat;
+  margin: 0 0 15px 15px;
+}
+.monthly-progress__osix {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #bfbfbf;
+}
+.monthly-progress__osix-item:not(:last-child) {
+  padding-right: 25px;
 }
 .monthly-progress__btn {
   margin-right: 5px;
@@ -897,8 +1032,11 @@ img {
 }
 .customers-feed__avatar {
   height: 42px;
+  margin-bottom: 13px;
 }
 .customers-feed__time-ago {
+  display: block;
+  margin-bottom: 10px;
   font-size: 8px;
   color: #979796;
 }
@@ -908,7 +1046,8 @@ img {
   align-content: stretch;
   flex-direction: row;
   flex-wrap: wrap;
-  width: calc(100% - 62px);
+  flex: auto;
+  flex-basis: 300px;
   font-size: 12px;
   color: #bfbfbf;
 }
@@ -1015,8 +1154,7 @@ img {
 }
 .today-task__text {
   flex-grow: 1;
-  width: 10%;
-  padding-right: 10px;
+  padding: 10px;
   color: #bfbfbf;
   font-size: 12px;
 }

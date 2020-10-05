@@ -1,6 +1,5 @@
 .wrapper {
     position: relative;
-    // @include flex;
     max-width: 1366px;
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
@@ -14,7 +13,6 @@ img {
 }
 
 .container {
-    // width: 100%;
     margin-left: 70px;
     
     @include md {
@@ -28,14 +26,6 @@ img {
 }
 
 
-
-.aside {
-
-}
-
-.footer {
-
-}
 
 .index {
     &__item {

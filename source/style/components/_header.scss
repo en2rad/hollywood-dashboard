@@ -54,6 +54,7 @@
     &__search {
         @include flex(row,center,center);
         flex: auto;
+        flex-grow: 5;
         min-height: 70px;
 
         border-right: 1px solid #f1f1f1;
